@@ -89,8 +89,8 @@ const Header = ({ type }) => {
               A lifetime of discounts? It's Genius.
             </h1>
             <p className="headerDesc">
-              Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+              Get rewarded for your property – unlock instant savings of 10% or
+              more with a free cleverDeal account
             </p>
             {!user && <button className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">
@@ -98,7 +98,7 @@ const Header = ({ type }) => {
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
                 <input
                   type="text"
-                  placeholder="Where are you going?"
+                  placeholder="Where are you looking?"
                   className="headerSearchInput"
                   onChange={(e) => setDestination(e.target.value)}
                 />

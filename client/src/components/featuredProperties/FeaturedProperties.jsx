@@ -14,6 +14,7 @@ const FeaturedProperties = () => {
             <div className="fpItem" key={item._id}>
               <img
                 src={item.photos[0]}
+                //src="https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o="
                 alt=""
                 className="fpImg"
               />
