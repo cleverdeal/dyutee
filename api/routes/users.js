@@ -5,7 +5,8 @@ import {
   getUser,
   getUsers,
 } from "../controllers/user.js";
-import { verifyAdmin, verifyToken, verifyUser } from "../utils/verifyToken.js";
+import { signup } from "../controllers/client.js";
+import { verifyAdmin, verifyToken, verifyUser,verifyClientUser } from "../utils/verifyToken.js";
 
 const router = express.Router();
 
@@ -32,5 +33,7 @@ router.get("/:id", verifyUser, getUser);
 
 //GET ALL
 router.get("/", verifyAdmin, getUsers);
+
+
 
 export default router;

@@ -33,3 +33,14 @@ export const verifyAdmin = (req, res, next) => {
     }
   });
 };
+
+export const verifyClientUser = (req, res, next) => {
+  verifyToken(req, res, next, () => {
+    if (req.user.password === req.user.confirm_password) {
+      next();
+    } else {
+      return next(createError(403, "password and confirm password is different"));
+    }
+  });
+};
+

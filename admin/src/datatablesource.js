@@ -35,8 +35,83 @@ export const userColumns = [
     width: 100,
   },
 ];
+export const clientColumns = [
+  { field: "_id", headerName: "ID", width: 70 },
+  {
+    field: "client",
+    headerName: "Clients",
+    width: 230,
+    renderCell: (params) => {
+      return (
+        <div className="cellWithImg">
+          <img className="cellImg" src={params.row.img || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"} alt="avatar" />
+          {params.row.clientname}
+        </div>
+      );
+    },
+  },
+  {
+    field: "email",
+    headerName: "Email",
+    width: 230,
+  },
 
-export const hotelColumns = [
+  {
+    field: "country",
+    headerName: "Country",
+    width: 100,
+  },
+  {
+    field: "city",
+    headerName: "City",
+    width: 100,
+  },
+  {
+    field: "phone",
+    headerName: "Phone",
+    width: 100,
+  },
+];
+
+export const brokerColumns = [
+  { field: "_id", headerName: "ID", width: 70 },
+  {
+    field: "broker",
+    headerName: "Brokers",
+    width: 230,
+    renderCell: (params) => {
+      return (
+        <div className="cellWithImg">
+          <img className="cellImg" src={params.row.img || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"} alt="avatar" />
+          {params.row.brokername}
+        </div>
+      );
+    },
+  },
+  {
+    field: "email",
+    headerName: "Email",
+    width: 230,
+  },
+
+  {
+    field: "country",
+    headerName: "Country",
+    width: 100,
+  },
+  {
+    field: "city",
+    headerName: "City",
+    width: 100,
+  },
+  {
+    field: "phone",
+    headerName: "Phone",
+    width: 100,
+  },
+];
+
+export const propertyColumns = [
   { field: "_id", headerName: "ID", width: 250 },
   {
     field: "name",

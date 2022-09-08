@@ -1,11 +1,13 @@
-import {
-  faBed,
-  faCalendarDays,
-  faCar,
-  faPerson,
-  faPlane,
-  faTaxi,
-} from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faBed,
+//   faCalendarDays,
+//   faCar,
+//   faPerson,
+//   faPlane,
+//   faTaxi,
+  
+// } from "@fortawesome/free-solid-svg-icons";
+import{faCalendarDays} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
 import { DateRange } from "react-date-range";
@@ -51,7 +53,7 @@ const Header = ({ type }) => {
 
   const handleSearch = () => {
     dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
-    navigate("/hotels", { state: { destination, dates, options } });
+    navigate("/property", { state: { destination, dates, options } });
   };
 
   return (
@@ -63,24 +65,32 @@ const Header = ({ type }) => {
       >
         <div className="headerList">
           <div className="headerListItem active">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+            {/* <FontAwesomeIcon icon={faBed} /> */}
+            <span>Buy</span>
           </div>
           <div className="headerListItem">
-            <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
+            {/* <FontAwesomeIcon icon={faPlane} /> */}
+            <span>Rent</span>
           </div>
           <div className="headerListItem">
-            <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
+            {/* <FontAwesomeIcon icon={faCar} /> */}
+            <span>PG / Co-living</span>
           </div>
           <div className="headerListItem">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Attractions</span>
+            {/* <FontAwesomeIcon icon={faBed} /> */}
+            <span>Commercial</span>
           </div>
           <div className="headerListItem">
-            <FontAwesomeIcon icon={faTaxi} />
-            <span>Airport taxis</span>
+            {/* <FontAwesomeIcon icon={faTaxi} /> */}
+            <span>Plot/Land</span>
+          </div>
+          <div className="headerListItem">
+            {/* <FontAwesomeIcon icon={faTaxi} /> */}
+            <span>Projects</span>
+          </div>
+          <div className="headerListItem">
+            {/* <FontAwesomeIcon icon={faTaxi} /> */}
+            <span>Dealers</span>
           </div>
         </div>
         {type !== "list" && (
@@ -95,10 +105,11 @@ const Header = ({ type }) => {
             {!user && <button className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faBed} className="headerIcon" />
+                {/* <FontAwesomeIcon icon={faBed} className="headerIcon" /> */}
                 <input
                   type="text"
                   placeholder="Where are you looking?"
+                  value={destination}
                   className="headerSearchInput"
                   onChange={(e) => setDestination(e.target.value)}
                 />
@@ -124,7 +135,7 @@ const Header = ({ type }) => {
                 )}
               </div>
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faPerson} className="headerIcon" />
+                {/* <FontAwesomeIcon icon={faPerson} className="headerIcon" /> */}
                 <span
                   onClick={() => setOpenOptions(!openOptions)}
                   className="headerSearchText"

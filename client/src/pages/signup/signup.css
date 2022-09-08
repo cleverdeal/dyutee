@@ -1,0 +1,52 @@
+.signup {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items:center;
+   justify-content: center;
+}
+.icon{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+.scontainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+  .sInput {
+    height: 30px;
+    padding: 10px;
+    
+  }
+  
+  .sButton {
+    border: none;
+    padding: 10px 20px;
+    background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .sButton:disabled{
+    background-color: #0071c28c;
+    cursor: not-allowed;
+  }
+  
+
+  

@@ -3,8 +3,10 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
-import hotelsRoute from "./routes/hotels.js";
+import propertyRoute from "./routes/property.js";
 import roomsRoute from "./routes/rooms.js";
+import clientRoute from "./routes/client.js";
+import brokerRoute from "./routes/broker.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
@@ -31,8 +33,10 @@ app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
-app.use("/api/hotels", hotelsRoute);
+app.use("/api/property", propertyRoute);
 app.use("/api/rooms", roomsRoute);
+app.use("/api/clients", clientRoute);
+app.use("/api/brokers", brokerRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
@@ -45,7 +49,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(8800, () => {
+app.listen(process.env.PORT || 8800, () => {
   connect();
   console.log("Connected to backend.");
 });

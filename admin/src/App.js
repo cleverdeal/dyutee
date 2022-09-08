@@ -4,13 +4,15 @@ import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { productInputs, userInputs } from "./formSource";
+import { productInputs, userInputs , clientInputs,brokerInputs} from "./formSource";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
-import { hotelColumns, roomColumns, userColumns } from "./datatablesource";
-import NewHotel from "./pages/newHotel/NewHotel";
+import { propertyColumns, roomColumns, userColumns, clientColumns,brokerColumns } from "./datatablesource";
+import NewProperty from "./pages/NewProperty/NewProperty";
+import NewClient from "./pages/NewClient/NewClient";
+import NewBroker from "./pages/NewBroker/NewBroker";
 import NewRoom from "./pages/newRoom/NewRoom";
 
 function App() {
@@ -66,12 +68,64 @@ function App() {
                 }
               />
             </Route>
-            <Route path="hotels">
+            <Route path="clients">
               <Route
                 index
                 element={
                   <ProtectedRoute>
-                    <List columns={hotelColumns} />
+                    <List columns={clientColumns} />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path=":clientId"
+                element={
+                  <ProtectedRoute>
+                    <Single />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <ProtectedRoute>
+                    <NewClient />
+                  </ProtectedRoute>
+                }
+              />
+            </Route>
+            <Route path="brokers">
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <List columns={brokerColumns} />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path=":brokerId"
+                element={
+                  <ProtectedRoute>
+                     <Single />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <ProtectedRoute>
+                    <NewBroker />
+                  </ProtectedRoute>
+                }
+              />
+            </Route>
+            <Route path="property">
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <List columns={propertyColumns} />
                   </ProtectedRoute>
                 }
               />
@@ -87,7 +141,7 @@ function App() {
                 path="new"
                 element={
                   <ProtectedRoute>
-                    <NewHotel  />
+                    <NewProperty  />
                   </ProtectedRoute>
                 }
               />

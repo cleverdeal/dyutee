@@ -25,13 +25,14 @@
 .headerListItem {
   display: flex;
   align-items: center;
+   cursor: pointer;
   gap: 10px;
 }
 
 .headerListItem.active {
-  border: 1px solid white;
+  
   padding: 10px;
-  border-radius: 20px;
+  
 }
 
 .headerDesc {
@@ -48,7 +49,7 @@
 }
 
 .headerSearch {
-  height: 30px;
+  height: 50px;
   background-color: white;
   border: 3px solid #febb02;
   display: flex;
@@ -75,6 +76,7 @@
 .headerSearchInput {
   border: none;
   outline: none;
+  color: rgb(51, 51, 51);
 }
 
 .headerSearchText {
